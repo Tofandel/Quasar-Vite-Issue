@@ -1,6 +1,12 @@
-import {defineConfig} from 'vite'
+import { defineConfig } from 'vite';
 import fakeVitePlugin from './fakeVitePlugin';
 
 export default defineConfig({
-  plugins: [fakeVitePlugin()]
-})
+  plugins: [
+    fakeVitePlugin(),
+    (() => {
+      console.log('Reloaded as well');
+      return {};
+    })()
+  ]
+});

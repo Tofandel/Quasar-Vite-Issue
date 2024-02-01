@@ -82,7 +82,11 @@ module.exports = configure(function(/* ctx */) {
       },
 
       vitePlugins: [
-        [fakeVitePlugin]
+        [fakeVitePlugin],
+        [() => {
+          console.log('Not reloaded :(')
+          return {}
+        }]
       ]
       //   [ 'package-name', { ..options.. } ]
       // ]

@@ -9,33 +9,16 @@ yarn
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### The issue
+
+A vite plugin which uses `server.restart()` will normally reload the config of all the plugins
+
+To demonstrate run `vite` or `npm run vite` which has been provided with a simple plugin to restart the server every 5 seconds
+You will also see the `Plugin reloaded` log
+
+Now run
 ```bash
-quasar dev
+npm run dev
 ```
 
-
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+Notice that the server still restart but the plugins are NOT reloaded
